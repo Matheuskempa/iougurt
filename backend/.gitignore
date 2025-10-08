@@ -1,0 +1,46 @@
+# Virtualenv
+venv/
+.venv/
+env/
+*.pyc
+__pycache__/
+
+# Configurações do Python
+*.pyo
+*.pyd
+
+# Logs e arquivos temporários
+*.log
+*.sqlite3
+*.db
+*.pot
+*.mo
+
+# Arquivos de ambiente
+.env
+.env.*
+
+# Editor/IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Uvicorn / FastAPI
+__pycache__/
+*.db-journal
+
+# Mypy
+.mypy_cache/
+
+# Pytest
+.cache/
+.pytest_cache/
+
+# Coverage
+htmlcov/
+.coverage
+
+# Outros arquivos temporários
+*.swp
+*.DS_Store
