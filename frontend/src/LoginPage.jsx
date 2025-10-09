@@ -2,7 +2,6 @@ import logo from "./assets/logo_iougurt.svg";
 import background from "./assets/background_mudar.svg";
 import colors from "./styles/colors";
 
-
 function LoginPage() {
   return (
     <div style={styles.container}>
@@ -32,18 +31,15 @@ function LoginPage() {
 
 const styles = {
   container: {
-    margin: 0,
-    padding: 0,
-    width: "100vw",
     height: "100vh",
+    width: "100vw",
     display: "flex",
     justifyContent: "center",
-    overflow: 'hidden',
     alignItems: "center",
-    backgroundImage: `url(${background})`,
-    backgroundRepeat: "no-repeat",
-    backgroundSize: "cover",
-    backgroundPosition: "center", // isso ajuda a centralizar o fundo
+    background: "linear-gradient(-45deg, #ff69b4, #ffe4e1, #ffc0cb, #ffb6c1)",
+    backgroundSize: "400% 400%",
+    animation: "gradientMove 15s ease infinite",
+    overflow: "hidden",
   },
   card: {
     backgroundColor: colors.white,
