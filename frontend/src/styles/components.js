@@ -1,4 +1,5 @@
 // src/styles/components.js
+import colors from "../styles/colors";
 
 const buttonStyles = {
   base: {
@@ -10,18 +11,18 @@ const buttonStyles = {
     transition: 'background-color 0.3s ease',
   },
   primary: {
-    backgroundColor: '#ff69b4',
-    color: '#fff',
+    backgroundColor: colors.PrimaryPink,
+    color: colors.white,
   },
   secondary: {
-    backgroundColor: '#ffe4e1',
-    color: '#333',
+    backgroundColor: colors.SecondaryPink,
+    color: colors.textBlack,
   },
 };
 
 const cardStyles = {
   base: {
-    backgroundColor: '#fff',
+    backgroundColor: colors.white,
     padding: '40px',
     borderRadius: '12px',
     boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
