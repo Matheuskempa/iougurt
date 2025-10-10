@@ -16,7 +16,7 @@ const buttonStyles = {
   },
   secondary: {
     backgroundColor: colors.SecondaryPink,
-    color: colors.textBlack,
+    color: colors.black,
   },
 };
 
