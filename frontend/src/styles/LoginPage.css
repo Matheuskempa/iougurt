@@ -42,11 +42,28 @@
 
 .password-wrapper {
   position: relative;
+  width: 100%;
+}
+
+.password-wrapper .eye-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
 }
 
 .password-wrapper input {
+  width: 100%;
+  padding: 12px 40px 12px 12px; /* espaço para o ícone à direita */
+  border: 1px solid #949697;
+  border-radius: 10px;
+  font-size: 14px;
+  outline: none;
   color: #333;
-  width: 94.4%;
+  box-sizing: border-box;
 }
 
 .toggle-visibility {
@@ -55,7 +72,10 @@
   top: 50%;
   transform: translateY(-50%);
   cursor: pointer;
+  width: 20px;
+  height: 20px;
 }
+
 
 /* Botão Entrar */
 .login-button {
