@@ -1,8 +1,10 @@
 const colors = {
   PrimaryPink: '#ff69b4',
+  PrymaryPink2: '#ffa6da',
   SecondaryPink: '#ffe4e1',
+  GrayBlack: '#949697',
   white: '#fff',
-  textBlack: '#333',
+  black: '#333',
   button: {
     background: '#ff69b4',
     text: '#fff',
