@@ -1,7 +1,8 @@
 import { useState , useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import './App.css'
+import LoginPage from './pages/LoginPage';
+import './styles/App.css'
 
 // function App() {
 //   const [count, setCount] = useState(0)
@@ -36,21 +37,28 @@ import './App.css'
 
 
 function App() {
-  const [message, setMessage] = useState("Carregando...");
+  // const [message, setMessage] = useState("Carregando...");
 
-  useEffect(() => {
-    fetch("/api/")  // <-- deve bater com a chave do proxy
-      .then(res => res.json())
-      .then(data => setMessage(data.message))
-      .catch(() => setMessage("Erro ao conectar à API"));
-  }, []);
+  // useEffect(() => {
+  //   fetch("/api/")  // <-- deve bater com a chave do proxy
+  //     .then(res => res.json())
+  //     .then(data => setMessage(data.message))
+  //     .catch(() => setMessage("Erro ao conectar à API"));
+  // }, []);
+
+  // return (
+  //   <div style={{ textAlign: "center", marginTop: "3rem" }}>
+  //     <h1>Frontend React 🚀</h1>
+  //     <p>Mensagem do backend: {message}</p>
+  //   </div>
+  // );
 
   return (
-    <div style={{ textAlign: "center", marginTop: "3rem" }}>
-      <h1>Frontend React 🚀</h1>
-      <p>Mensagem do backend: {message}</p>
+    <div>
+      <LoginPage />
     </div>
   );
+
 }
 
 export default App;
