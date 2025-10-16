@@ -1,8 +1,6 @@
 from sqlalchemy import Column, BigInteger, String, Boolean, DateTime
-from sqlalchemy.orm import declarative_base
+from app.database import Base
 from datetime import datetime
-
-Base = declarative_base()
 
 class Usuario(Base):
     __tablename__ = "usuario"

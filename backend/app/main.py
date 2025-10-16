@@ -4,8 +4,11 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 from fastapi.middleware.cors import CORSMiddleware
 from app.database import test_connection
-from app.routes.user import router as user_router
-from app.models.usuario_model import Base
+from app.routes.usuario_router import router as user_router
+from app.routes.empresa_router import router as empresa_router
+from app.database import Base
+from app.models.usuario_model import Usuario
+from app.models.empresa_model import Empresa
 from app.database import engine
 
 app = FastAPI()
@@ -34,6 +37,8 @@ Base.metadata.create_all(bind=engine)
 
 # Inclui as rotas do user
 app.include_router(user_router)
+app.include_router(empresa_router)
+
 
 # Rota raiz
 @app.get("/")

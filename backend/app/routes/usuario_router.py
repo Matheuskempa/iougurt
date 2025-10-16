@@ -7,7 +7,7 @@ from passlib.context import CryptContext
 
 router = APIRouter(
     prefix="/usuario",
-    tags=["usuario"]
+    tags=["Usuario"]
 )
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
