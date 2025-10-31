@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 import { FaHome, FaUser, FaCalendarAlt, FaHistory, FaSignOutAlt } from "react-icons/fa";
 import logoIougurt from "../assets/logo_iougurt.svg";
-import colors from "../styles/colors"
-
+import colors from "../styles/colors";
 
 const SidebarContainer = styled.div`
   background: ${colors.white};
@@ -14,21 +14,26 @@ const SidebarContainer = styled.div`
   padding: 2rem 1rem;
 `;
 
-
 const Nav = styled.nav`
   display: flex;
   flex-direction: column;
   gap: 1rem;
 `;
 
-const NavItem = styled.div`
+const StyledLink = styled(NavLink)`
   display: flex;
   align-items: center;
-  gap: 0.80rem;
+  gap: 0.8rem;
   font-weight: 500;
+  text-decoration: none;
   color: ${colors.GrayBlack80};
-  cursor: pointer;
+  transition: color 0.2s ease;
+
   &:hover {
+    color: ${colors.PrimaryPink};
+  }
+
+  &.active {
     color: ${colors.PrimaryPink};
   }
 `;
@@ -45,21 +50,27 @@ const Avatar = styled.div`
   width: 35px;
   height: 35px;
   border-radius: 50%;
-  background:  ${colors.GrayBlack50};
+  background: ${colors.test};
 `;
 
 export default function Sidebar() {
   return (
     <SidebarContainer>
       <div>
-        <img src={logoIougurt} alt="Logo Iougurt" className="logo" style={{marginTop:20, height:32, width:106}} />
+        <img
+          src={logoIougurt}
+          alt="Logo Iougurt"
+          className="logo"
+          style={{ marginTop: 20, height: 32, width: 106 }}
+        />
         <Nav>
-          <NavItem><FaHome /> Home</NavItem>
-          <NavItem><FaUser /> Pacientes</NavItem>
-          <NavItem><FaCalendarAlt /> Agenda</NavItem>
-          <NavItem><FaHistory /> Histórico</NavItem>
+          <StyledLink to="/"><FaHome /> Home</StyledLink>
+          <StyledLink to="/pacientes"><FaUser /> Pacientes</StyledLink>
+          <StyledLink to="/agenda"><FaCalendarAlt /> Agenda</StyledLink>
+          <StyledLink to="/historico"><FaHistory /> Histórico</StyledLink>
         </Nav>
       </div>
+
       <div>
         <UserBox>
           <Avatar />
@@ -67,7 +78,9 @@ export default function Sidebar() {
             <strong>Rafael Rocha</strong>
           </div>
         </UserBox>
-        <NavItem style={{ marginTop: "1rem" }}><FaSignOutAlt /> Sair</NavItem>
+        <StyledLink to="/login" style={{ marginTop: "1rem" }}>
+          <FaSignOutAlt /> Sair
+        </StyledLink>
       </div>
     </SidebarContainer>
   );
