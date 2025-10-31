@@ -19,7 +19,7 @@ const Hora = styled.div`
 const Card = styled.div`
   flex: 1;
   background: ${({ bg }) => bg || colors.white};
-  border: 1.5px solid ${({ color }) => color || colors.GrayBlack10};
+  border: 2px solid ${({ color }) => color || colors.GrayBlack10};
   border-radius: 10px;
   padding: 12px 16px;
   margin-bottom: 20px;

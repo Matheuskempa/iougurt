@@ -45,7 +45,7 @@ const Avatar = styled.div`
   width: 35px;
   height: 35px;
   border-radius: 50%;
-  background: #ddd;
+  background:  ${colors.GrayBlack50};
 `;
 
 export default function Sidebar() {
