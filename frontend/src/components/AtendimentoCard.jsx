@@ -7,12 +7,10 @@ const Card = styled.div`
   border: 1px solid ${({ color }) => color || colors.GrayBlack10};
   border-radius: 10px;
   padding: 8px 16px;
-  margin-right: 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin: 12px;
-  min-width: 480px;
   box-shadow: 0 0 0 1px ${({ color }) => color || colors.GrayBlack10};
 `;
 

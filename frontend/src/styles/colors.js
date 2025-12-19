@@ -1,6 +1,7 @@
 const colors = {
   PrimaryPink: '#ffa8dc',
   PrymaryPink2: '#ffa6da',
+  PrymaryPink2Faded: '#fad8ecff',
   SecondaryPink: '#ffe4e1',
   GrayBlack50: '#949697',
   GrayBlack10: '#EAEAEA',
