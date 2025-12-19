@@ -12,6 +12,7 @@ const SidebarContainer = styled.div`
   flex-direction: column;
   justify-content: space-between;
   padding: 2rem 1rem;
+  font-family: 'League Spartan';
 `;
 
 const Nav = styled.nav`
@@ -24,7 +25,9 @@ const StyledLink = styled(NavLink)`
   display: flex;
   align-items: center;
   gap: 0.8rem;
-  font-weight: 500;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.43;
   text-decoration: none;
   color: ${colors.GrayBlack80};
   transition: color 0.2s ease;
@@ -43,7 +46,9 @@ const UserBox = styled.div`
   align-items: center;
   color: ${colors.GrayBlack80};
   gap: 0.8rem;
-  font-size: 0.9rem;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.43;
 `;
 
 const Avatar = styled.div`
@@ -61,8 +66,9 @@ export default function Sidebar() {
           src={logoIougurt}
           alt="Logo Iougurt"
           className="logo"
-          style={{ marginTop: 20, height: 32, width: 106 }}
-        />
+          style={{ marginTop: 20,  marginBottom: 40, height: 32, width: 106 }}
+        /> 
+
         <Nav>
           <StyledLink to="/"><FaHome /> Home</StyledLink>
           <StyledLink to="/pacientes"><FaUser /> Pacientes</StyledLink>

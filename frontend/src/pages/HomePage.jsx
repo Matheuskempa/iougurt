@@ -4,11 +4,14 @@ import AtendimentoCard from "../components/AtendimentoCard";
 import AgendaCard from "../components/AgendaCard";
 import styled from "styled-components";
 import colors from "../styles/colors"
+import maltesFoto from '../assets/fotos/maltes.jpeg'; // Add this import at the top
+
 
 const ContainerCard = styled.div`
   border: 1px solid ${colors.GrayBlack10};
   border-radius: 10px;
   padding: 20px;
+  flex: 1;
   
 `;
 
@@ -51,9 +54,9 @@ const Home = () => {
           <ContainerCard>
 
               <Title>Últimos atendimentos</Title>
-              <AtendimentoCard nome="Max" tutor="Lucas Gabriel Fernandes" data="03/09/2025, 16:00" especie="Cachorro" atendimento="Vacinação" foto="https://place-puppy.com/40x40" color={colors.card.blue} />
-              <AtendimentoCard nome="Thor" tutor="Carlos Pereira Lima" data="12/08/2025, 15:30" especie="Cachorro" atendimento="Consulta" foto="https://place-puppy.com/41x41" color={colors.card.yellow} />
-              <AtendimentoCard nome="Luna Silva" tutor="Beatriz Costa" data="10/08/2025, 15:00" especie="Cachorro" atendimento="Exame" foto="https://place-puppy.com/42x42" color={colors.card.purple} />
+              <AtendimentoCard nome="Max" tutor="Lucas Gabriel Fernandes" data="03/09/2025, 16:00" especie="Cachorro" atendimento="Vacinação" foto={maltesFoto} color={colors.card.blue} />
+              <AtendimentoCard nome="Thor" tutor="Carlos Pereira Lima" data="12/08/2025, 15:30" especie="Cachorro" atendimento="Consulta" foto={maltesFoto} color={colors.card.yellow} />
+              <AtendimentoCard nome="Luna Silva" tutor="Beatriz Costa" data="10/08/2025, 15:00" especie="Cachorro" atendimento="Exame" foto={maltesFoto} color={colors.card.purple} />
           </ContainerCard>
        
         </Column>
@@ -62,9 +65,9 @@ const Home = () => {
         <Column>
           <ContainerCard>
             <Title>Agenda do dia</Title>
-            <AgendaCard hora="07:00" nome="Simba" tutor="João Ramos" especie="Gato" atendimento="Vacinação" foto="https://placekitten.com/41/41" color={colors.card.blue} bg={colors.cardDate.blue} />
-            <AgendaCard hora="07:30" nome="Calvin" tutor="Mariana Castro" especie="Gato" atendimento="Consulta" foto="https://placekitten.com/42/42" color={colors.card.yellow} bg={colors.cardDate.yellow}  />
-            <AgendaCard hora="08:30" nome="Nina Costa" tutor="Ana Souza" especie="Cachorro" atendimento="Exame" foto="https://place-puppy.com/43x43" color={colors.card.purple} bg={colors.cardDate.purple}  />
+            <AgendaCard hora="07:00" nome="Simba" tutor="João Ramos" especie="Gato" atendimento="Vacinação" foto={maltesFoto} color={colors.card.blue} bg={colors.cardDate.blue} />
+            <AgendaCard hora="07:30" nome="Calvin" tutor="Mariana Castro" especie="Gato" atendimento="Consulta" foto={maltesFoto} color={colors.card.yellow} bg={colors.cardDate.yellow}  />
+            <AgendaCard hora="08:30" nome="Nina Costa" tutor="Ana Souza" especie="Cachorro" atendimento="Exame" foto={maltesFoto} color={colors.card.purple} bg={colors.cardDate.purple}  />
           </ContainerCard>
         </Column>
       </Content>
