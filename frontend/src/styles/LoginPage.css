@@ -1,4 +1,3 @@
-
 /* Tela inteira */
 .login-container {
   display: flex;
@@ -112,4 +111,13 @@
   height: 100px;
   width: 300px;
   margin-bottom: 20px;
+}
+
+.error-message {
+  position: absolute;
+  bottom: -18px; /* logo abaixo do input */
+  left: 0;
+  font-size: 12px; /* pequenininho */
+  color: #ff4d4f; /* vermelho */
+  font-weight: 500;
 }

@@ -1,0 +1,22 @@
+@import '/src/styles/colors.css';
+
+.button {
+  font-weight: bold;
+  border: none;
+  padding: 12px;
+  margin-top: 6px;
+  border-radius: 6px;
+  cursor: pointer; 
+}
+
+.primary {
+  background-color: var(--color-primary-pink);
+  color: var(--color-white);
+  transition: background-color 0.3s ease;
+}
+
+.secondary {
+  background-color: var(--color-secondary-pink);
+  color: var(--color-white);
+  transition: background-color 0.3s ease;
+}

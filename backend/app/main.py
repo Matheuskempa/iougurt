@@ -2,40 +2,48 @@ import os
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
-from fastapi.middleware.cors import CORSMiddleware  # <--- import CORS
-
-# Import absoluto para evitar problemas de import
-from app.routes import user
+from fastapi.middleware.cors import CORSMiddleware
+from app.database import test_connection
+from app.routes.usuario_router import router as user_router
+from app.routes.empresa_router import router as empresa_router
+from app.database import Base
+from app.models.usuario_model import Usuario
+from app.models.empresa_model import Empresa
+from app.database import engine
 
 app = FastAPI()
 
 # Configuração de CORS
 origins = [
-    "http://localhost:5173",  # porta do seu frontend (Vite/React)
+    "http://localhost:5173",
     "http://127.0.0.1:5173",
 ]
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,  # quem pode acessar
+    allow_origins=origins,
     allow_credentials=True,
-    allow_methods=["*"],     # GET, POST, etc
+    allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# Caminho absoluto para a pasta do próprio main.py
+# Caminho para a pasta de arquivos estáticos
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 STATIC_DIR = os.path.join(BASE_DIR, "static")
-
-# Monta a pasta de arquivos estáticos (favicon, imagens, etc)
 app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
 
+# Cria tabelas no banco
+Base.metadata.create_all(bind=engine)
+
 # Inclui as rotas do user
-app.include_router(user.router)
+app.include_router(user_router)
+app.include_router(empresa_router)
+
 
 # Rota raiz
 @app.get("/")
 def read_root():
+    test_connection()
     return {"message": "API funcionando!"}
 
 # Rota para favicon
