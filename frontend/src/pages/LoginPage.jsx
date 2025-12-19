@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../styles/LoginPage.css";
 import logoIougurt from "../assets/logo_iougurt.svg";
 import eyeOpen from "../assets/eye_open.svg";
-import eyeClosed from "../assets/eye_closed.svg"; // você pode criar ou usar outro ícone
+import eyeClosed from "../assets/eye_closed.svg";
 import colors from "../styles/colors";
 
 const Login = () => {
@@ -16,7 +16,7 @@ const Login = () => {
     setError("");
 
     try {
-      const response = await fetch("http://localhost:8000/login", {
+      const response = await fetch("http://localhost:8000/usuario/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, senha }),
@@ -26,9 +26,11 @@ const Login = () => {
 
       if (response.ok) {
         console.log("Login realizado:", data);
-        // Aqui você pode redirecionar ou salvar token
+        // redirecionar ou salvar token
+        window.location.reload();
+        
       } else {
-        setError(data.detail || "Erro ao fazer login");
+        setError(data.detail || "Email ou senha incorretos");
       }
     } catch (err) {
       console.error("Erro na requisição:", err);
@@ -36,17 +38,17 @@ const Login = () => {
     }
   };
 
-const handleTestApi = async () => {
-  try {
-    const response = await fetch("http://127.0.0.1:8000/");
-    const data = await response.json();
-    console.log("Resposta da API:", data);
-    alert("Resposta da API: " + JSON.stringify(data));
-  } catch (err) {
-    console.error("Erro ao chamar API:", err);
-    alert("Erro ao conectar com a API");
-  }
-};
+  const handleTestApi = async () => {
+    try {
+      const response = await fetch("http://127.0.0.1:8000/");
+      const data = await response.json();
+      console.log("Resposta da API:", data);
+      alert("Resposta da API: " + JSON.stringify(data));
+    } catch (err) {
+      console.error("Erro ao chamar API:", err);
+      alert("Erro ao conectar com a API");
+    }
+  };
 
   return (
     <div className="login-container">
@@ -77,14 +79,15 @@ const handleTestApi = async () => {
               src={showPassword ? eyeClosed : eyeOpen}
               alt={showPassword ? "Ocultar senha" : "Mostrar senha"}
               onClick={() => setShowPassword(!showPassword)}
-              className="toggle-visibility" // aqui estava "eye-icon", agora bate com o CSS
+              className="toggle-visibility"
             />
+            {error && <span className="error-message">{error}</span>}
           </div>
-          {error && <p className="error-message">{error}</p>}
+
           <button
-            type="button" // mudamos para button, não submit
+            type="button"
             className="login-button"
-            onClick={handleTestApi}
+            onClick={handleLogin}
           >
             Entrar
           </button>
