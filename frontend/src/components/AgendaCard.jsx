@@ -20,14 +20,15 @@ const Card = styled.div`
   flex: 1;
   background: ${({ bg }) => bg || colors.white};
   border: 2px solid ${({ color }) => color || colors.GrayBlack10};
-  border-radius: 10px;
-  padding: 12px 16px;
   margin-bottom: 20px;
   color: ${colors.black};
   font-size: 0.85rem;
   display: flex;
   flex-direction: column;
   gap: 4px;
+  border-radius: 12px;
+  padding: 10px 14px;
+  margin: 0;
 `;
 
 const Header = styled.div`

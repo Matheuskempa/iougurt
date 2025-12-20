@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import { FaHome, FaUser, FaCalendarAlt, FaHistory, FaSignOutAlt } from "react-icons/fa";
 import logoIougurt from "../assets/logo_iougurt.svg";
+import profileImage from "../assets/fotos/bob.jpeg";
 import colors from "../styles/colors";
 
 const SidebarContainer = styled.div`
@@ -51,12 +52,13 @@ const UserBox = styled.div`
   line-height: 1.43;
 `;
 
-const Avatar = styled.div`
+const Avatar = styled.img`
   width: 35px;
   height: 35px;
   border-radius: 50%;
-  background: ${colors.test};
+  object-fit: cover;
 `;
+
 
 export default function Sidebar() {
   return (
@@ -79,9 +81,9 @@ export default function Sidebar() {
 
       <div>
         <UserBox>
-          <Avatar />
+          <Avatar src={profileImage} alt="Foto do usuário" />
           <div>
-            <strong>Rafael Rocha</strong>
+            Rafael Rocha
           </div>
         </UserBox>
         <StyledLink to="/login" style={{ marginTop: "1rem" }}>

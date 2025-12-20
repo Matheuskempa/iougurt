@@ -2,49 +2,70 @@ import React from "react";
 import styled from "styled-components";
 import colors from "../styles/colors";
 
-
+/* CARD */
 const Card = styled.div`
-  border: 1px solid ${({ color }) => color || colors.GrayBlack10};
-  border-radius: 10px;
-  padding: 8px 16px;
+  border: 2px solid ${({ color }) => color || colors.GrayBlack10};
+  border-radius: 16px;
+
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin: 12px;
-  box-shadow: 0 0 0 1px ${({ color }) => color || colors.GrayBlack10};
+  gap: 20px;
+  border-radius: 12px;
+  padding: 10px 14px; /* 🔑 menor */
+  margin: 0;          /* 🔑 remove espaço extra */
 `;
 
+/* FOTO */
+const Avatar = styled.img`
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+`;
+
+/* BLOCO ESQUERDO (nome + foto) */
 const Left = styled.div`
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
+  min-width: 160px;
 `;
 
-const Img = styled.img`
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  object-fit: cover;
-`;
-
+/* NOME DO PET */
 const PetName = styled.div`
-  font-weight: 600;
+  font-family: 'League Spartan';
+  font-size: 16px;
+  font-weight: 500;
   color: ${colors.black};
+  white-space: nowrap;
 `;
 
+/* BLOCO DIREITO (infos) */
 const Right = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  gap: 8px 24px;
-  font-size: 0.85rem;
-  color: ${colors.GrayBlack80};
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 48px;
+  row-gap: 8px;
 `;
 
+/* CAMPO */
 const Field = styled.div`
-  span {
-    color: ${colors.GrayBlack80};
-    font-weight: 500;
+  display: flex;
+  gap: 6px;
+
+  font-family: 'League Spartan';
+  font-size: 14px;
+  line-height: 20px;
+
+  span:first-child {
+    color: ${colors.GrayBlack50};
+    white-space: nowrap;
+  }
+
+  span:last-child {
+    color: ${colors.black};
+    white-space: nowrap;
   }
 `;
 
@@ -60,21 +81,29 @@ export default function AtendimentoCard({
   return (
     <Card color={color}>
       <Left>
-        <Img src={foto} alt={nome} />
+        <Avatar src={foto} alt={nome} />
         <PetName>{nome}</PetName>
       </Left>
+
       <Right>
         <Field>
-          Atendido em:&nbsp;<span>{data}</span>
+          <span>Atendido em:</span>
+          <span>{data}</span>
         </Field>
+
         <Field>
-          Espécie:&nbsp;<span>{especie}</span>
+          <span>Espécie:</span>
+          <span>{especie}</span>
         </Field>
+
         <Field>
-          Tutor:&nbsp;<span>{tutor}</span>
+          <span>Tutor:</span>
+          <span>{tutor}</span>
         </Field>
+
         <Field>
-          Atendimento:&nbsp;<span>{atendimento}</span>
+          <span>Atendimento:</span>
+          <span>{atendimento}</span>
         </Field>
       </Right>
     </Card>
