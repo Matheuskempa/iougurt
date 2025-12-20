@@ -71,7 +71,10 @@ const Container = styled.div`
 
 const Content = styled.div`
   background: ${colors.white};
-  padding: 2rem;
+  margin-top: 32px;
+  margin-left: 32px;
+  margin-right: 32px;
+
   display: flex;
   gap: 2rem;
   display: grid;
